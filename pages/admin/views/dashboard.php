@@ -1,3 +1,25 @@
+<?php
+
+include '../../../utils/database/helper.php';
+
+$instructors = fetch("SELECT * FROM instructors");
+$students = fetch(
+    "SELECT students.name, credentials.email FROM students
+    JOIN credentials ON students.credential_id = credentials.id
+    LIMIT 5"
+);
+$courses = fetch(
+    "SELECT courses.name, course_categories.name, courses.level, courses.description as 'category' FROM courses
+    JOIN course_categories ON courses.category_id = course_categories.id"
+);
+$withdrawalRequests = fetch(
+    "SELECT instructors.name, withdrawal_requests.amount FROM withdrawal_requests
+    JOIN instructors ON withdrawal_requests.instructor_id = instructors.id
+    LIMIT 5"
+);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +74,8 @@
     }
 
     .sidebar {
+        position: sticky;
+        top: 0;
         width: 374px;
         background-color: var(--sidebar);
         display: flex;
@@ -442,7 +466,7 @@
                     <div class="overlap-group-wrapper">
                         <div class="overlap-group-1">
                             <div class="text">Total Pengajar</div>
-                            <div class="text-wrapper">0</div>
+                            <div class="text-wrapper"><?= count($instructors) ?></div>
                             <img class="groups-fill" alt="Groups fill"
                                 src="../../../assets/img/groups-2-fill-streamline-rounded-fill-material-symbols.svg" />
                         </div>
@@ -452,7 +476,7 @@
                     <div class="overlap-group-wrapper">
                         <div class="overlap-group-2">
                             <div class="text">Total Siswa</div>
-                            <div class="text-wrapper">0</div>
+                            <div class="text-wrapper"><?= count($students) ?></div>
                             <img class="groups-fill" alt="Groups fill" src="../../../assets/img/image-4.png" />
                         </div>
                     </div>
@@ -461,7 +485,7 @@
                     <div class="overlap-group-wrapper">
                         <div class="overlap-group-3">
                             <div class="text">Total Kursus</div>
-                            <div class="text-wrapper">0</div>
+                            <div class="text-wrapper"><?= count($courses) ?></div>
                             <img class="groups-fill" alt="Groups fill"
                                 src="../../../assets/img/book-2-fill-streamline-rounded-fill-material-symbols.svg" />
                         </div>
@@ -504,6 +528,7 @@
 
             <h2>Kursus Baru</h2>
             <div class="table-container">
+                <?php if (count($courses) !== 0): ?>
                 <table>
                     <thead>
                         <tr>
@@ -514,30 +539,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($courses as $course): ?>
                         <tr>
-                            <td>Adwin</td>
-                            <td>Soft Skills</td>
-                            <td>Menengah</td>
-                            <td>Meningkatkan Keterampilan Pemrograman</td>
+                            <td><?= $course['name'] ?></td>
+                            <td><?= $course['category'] ?></td>
+                            <td><?= $course['level'] ?></td>
+                            <td><?= $course['description'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Charles</td>
-                            <td>Mobile Development</td>
-                            <td>Mudah</td>
-                            <td>Dasar-Dasar Pengembangan Aplikasi Mobile</td>
-                        </tr>
-                        <tr>
-                            <td>--</td>
-                            <td>--</td>
-                            <td>--</td>
-                            <td>--</td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php else: ?>
+                    <p style="color:white;">Belum ada kursus ditambahkan</p>
+                <?php endif; ?>
             </div>
 
             <h2>Siswa Baru</h2>
             <div class="table-container">
+                <p style="color: white">Belum ada siswa</p>
+                <?php if (count($students) !== 0): ?>
                 <table>
                     <thead>
                         <tr>
@@ -546,20 +566,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($students as $student): ?>
                         <tr>
-                            <td>Sarah</td>
-                            <td>sarah@gmail.com</td>
+                            <td><?= $student['name'] ?></td>
+                            <td><?= $student['email'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Farel</td>
-                            <td>farel@gmail.com</td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php endif; ?>
             </div>
 
             <h2>Permintaan Penarikan Dana</h2>
             <div class="table-container">
+                <?php if (count($withdrawalRequests) !== 0):?>
                 <table>
                     <thead>
                         <tr>
@@ -568,16 +588,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($withdrawalRequests as $withdrawalRequest): ?>
                         <tr>
-                            <td>Adwin</td>
-                            <td>Rp100.000</td>
+                            <td><?= $withdrawalRequest[''] ?></td>
+                            <td><?= $withdrawalRequest['amount'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Guy Hanswin</td>
-                            <td>Rp200.000</td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php else: ?>
+                    <p style="color:white;">Belum ada permintaan penarikan</p>
+                <?php endif; ?>
             </div>
         </div>
     </div>

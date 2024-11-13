@@ -308,9 +308,6 @@
         text-align: left;
     }
 
-
-
-
     table {
         width: 100%;
         background-color: #e5e7eb;
@@ -334,21 +331,21 @@
     }
 
     footer {
-        background-color: #34d399;
+        background-image: url(../../../assets/img/bg-footer.png);
         color: white;
         padding: 30px;
-        box-sizing: border-box;
-        width: 100vw;
-        justify-content: center;
+    }
+
+    footer .icon {
+        width: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
     }
 
     footer .grid {
         display: flex;
-        justify-content: space-between;
         gap: 20px;
         flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
     }
 
     footer .footer-logo {
@@ -359,19 +356,25 @@
     }
 
     footer .footer-logo img {
-        width: 60px;
-        height: auto;
+        width: 180px;
+        height: 82px;
         margin-bottom: 10px;
     }
 
     footer .grid div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         flex: 1;
         margin-bottom: 20px;
+        text-align: left;
     }
 
-    footer .grid h3 {
-        font-size: 20px;
-        font-weight: bold;
+    footer .siswa li,
+    footer .alamat li,
+    footer .instruktur li {
+        text-align: left;
+        align-self: flex-start;
     }
 
     footer .grid a {
@@ -380,7 +383,16 @@
     }
 
     footer .grid a:hover {
-        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        margin-bottom: 20px;
     }
 
     .overlap-group-3 {
@@ -570,43 +582,54 @@
                     </div>
                 </div>
             </div>
+            <footer>
+        <div class="grid">
+            <div class="footer-logo">
+                <img alt="Logo" src="../../../assets/img/django-3.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    consequat mauris.
+                </p>
+            </div>
+            <div class="instruktur">
+                <h3>Instruktur</h3>
+                <ul>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Instructor</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="siswa">
+                <h3>Siswa</h3>
+                <ul>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Jelajahi Kursus</a></li>
+                    <li><a href="#">Wishlist Kursus</a></li>
+                    <li><a href="#">Student</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="alamat">
+                <h3>Alamat</h3>
+                <ul>
+                    <li>
+                        <img src="../../../assets/img/icon-20-svg.svg" alt="Lokasi" class="icon" />
+                        Jalan Gelatik, Samarinda
+                    </li>
+                    <li>
+                        <img src="../../../assets/img/icon-19-svg.svg" alt="Email" class="icon" />
+                        <a href="mailto:admin@django.com">admin@django.com</a>
+                    </li>
+                    <li>
+                        <img src="../../../assets/img/icon-21-svg.svg" alt="Telepon" class="icon" />
+                        +48 731 819 948
+                    </li>
+                </ul>
+            </div>
         </div>
-        <footer style="display:inline-flex">
-            <div class="grid">
-                <div class="footer-logo">
-                    <img alt="Logo" src="../../../assets/img/django-3.png" />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                        consequat mauris.
-                    </p>
-                </div>
-                <div>
-                    <h3>Instruktur</h3>
-                    <ul>
-                        <li><a href="#">Profil</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Instructor</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Siswa</h3>
-                    <ul>
-                        <li><a href="#">Profil</a></li>
-                        <li><a href="#">Jelajahi Kursus</a></li>
-                        <li><a href="#">Wishlist Kursus</a></li>
-                        <li><a href="#">Student</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Alamat</h3>
-                    <p>Jalan Gelatik, Samarinda</p>
-                    <p><a href="mailto:admin@django.com">admin@django.com</a></p>
-                    <p>+48 731 819 948</p< /div>
-                </div>
-        </footer>
+    </footer>
 </body>
 
 </html>
