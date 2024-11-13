@@ -38,6 +38,8 @@ html {
 }
 
 .sidebar {
+    position: sticky;
+    top: 0;
     width: 374px;
     background-color: var(--sidebar);
     display: flex;
