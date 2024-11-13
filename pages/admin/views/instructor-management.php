@@ -51,7 +51,7 @@
             <div class="inst-count">
                 <img src="../../../assets/img/total-pengajar.png" alt="">
                 <h2>Jumlah Pengajar</h2>
-                <h2>0</h2>
+                <h2>0</h2>  
             </div>
             <div class="inst-data">
                 <div class="head">
