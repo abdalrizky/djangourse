@@ -1,0 +1,347 @@
+:root {
+    --body-small-font-family: "DM Sans", Helvetica;
+    --body-small-font-size: 16px;
+    --body-small-font-style: normal;
+    --body-small-font-weight: 400;
+    --body-small-letter-spacing: 0.5px;
+    --body-small-line-height: 24px;
+    --m3-label-medium-font-family: "Roboto", Helvetica;
+    --m3-label-medium-font-size: 12px;
+    --m3-label-medium-font-style: normal;
+    --m3-label-medium-font-weight: 500;
+    --m3-label-medium-letter-spacing: 0.5px;
+    --m3-label-medium-line-height: 16px;
+    --m3-title-medium-font-family: "Roboto", Helvetica;
+    --m3-title-medium-font-size: 16px;
+    --m3-title-medium-font-style: normal;
+    --m3-title-medium-font-weight: 500;
+    --m3-title-medium-letter-spacing: 0.15000000596046448px;
+    --m3-title-medium-line-height: 24px;
+    --neutral-10: rgba(72, 98, 132, 1);
+    --neutral-2: rgba(222, 229, 237, 1);
+    --background-color: #d9d9d9;
+    --sidebar: #ffffff;
+    --semibold-60-font-family: "Poppins", Helvetica;
+    --semibold-60-font-size: 60px;
+    --semibold-60-font-style: normal;
+    --semibold-60-font-weight: 600;
+    --semibold-60-letter-spacing: 0px;
+    --semibold-60-line-height: 30px;
+  }
+
+  body {
+    font-family: "DM Sans", "Poppins", "Roboto";
+  }
+
+  #main-structure {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navbar-section {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #245044;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 2rem;
+  }
+
+  .navbar img {
+    width: 10%;
+    height: 10%;
+  }
+
+  .navbar .middle-item {
+    display: flex;
+    gap: 7.12vh;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: large;
+  }
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.78rem 0 1.78rem 0;
+    background-color: aqua;
+/* bg pengajar */
+    background: radial-gradient(100% 83.72% at 0% 67.37%, #216C68 0%, #D9D9D9 0.73%, #8AB7B8 33.49%, #1E888C 78.25%, #59A2A4 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+}
+
+.hero-section h2 {
+    color: white;
+}
+
+.main-content {
+    background-color: #D9D9D9;
+    display: flex;
+    padding: 0.87rem;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 15%;
+}
+.profile {
+    background-color: #1E888C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.62rem;
+    border-radius: 16px;
+}
+
+.profile img {
+    width: 160px;
+    height: 144px;
+    border-radius: 16px;
+}
+
+.profile .profile-name {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 28px 0;
+}
+
+.profile .add-course {
+    /* button style */
+}
+
+.navigation {
+    background-color: #fff;
+    border-radius: 16px;
+}
+.navigation ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.navigation li {
+    
+}
+
+.navigation li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li a:hover {
+    background-color: #e0f7fa;
+    color: #00796b;
+}
+
+.navigation li a i {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.navigation .section-title {
+    margin: 16px 0 8px;
+    font-weight: bold;
+    color: #00796b;
+    padding: 0 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.right-content {
+    margin: 0 0 0 20px;
+    width: 85%;
+    border-radius: 16px;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.count-course {
+    max-width: 400px;
+    height: 160px;
+    flex: 1 1 calc(50% - 10px); 
+    background-color: #1E888C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    
+}
+.count-student {
+    max-width: 400px;
+    height: 160px;
+    flex: 1 1 calc(50% - 10px); 
+    background-color: #1E888C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    
+}
+
+.revenue {
+    max-width: 400px;
+    height: 160px;
+    flex: 1 1 calc(50% - 10px); 
+    background-color: #1E888C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+.count-approve {
+    max-width: 400px;
+    height: 160px;
+    flex: 1 1 calc(50% - 10px); 
+    background-color: #1E888C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.panel-item {
+    margin-top: 20px;
+    padding: 1rem;
+    border-radius: 16px;
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.course-table th {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+
+}
+
+.course-table th:first-child {
+    border-top-left-radius: 12px;
+    text-align: center;
+}
+
+.course-table th:last-child {
+    border-top-right-radius: 12px;
+    text-align: center;
+}
+
+.course-table td:nth-child(2) {
+    text-align: center; 
+}
+
+.course-table td:nth-child(3) {
+    text-align: center; 
+}
+
+.course-table th:nth-child(2) {
+    text-align: center; 
+}
+
+.course-table td {
+    padding: 12px;
+    background-color: #D1E7E5;
+    color: #333;
+}
+
+.course-table tr:nth-child(even) td {
+    background-color: #BFD9D8;
+}
+
+
+.course-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-details img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.course-details span {
+    font-size: 16px;
+    color: #333;
+}
+
+  
+footer {
+    background-image: url('../../../assets/img/bg-footer.png');
+    color: white;
+    padding: 30px;
+  }
+  
+  footer .grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  footer li {
+    list-style: none;
+  }
+  
+  footer .footer-logo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer .footer-logo img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  footer .grid div {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  
+  footer .grid h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  footer .grid a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer .grid a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0"/>
+    <title>Instructor View - Dashboard</title>
+    <link rel="stylesheet" href="./styles/instructor-dashboard.css"/>
+  </head>
+  <body>
+    <div id="main-structure">
+      <nav id="navbar-section">
+        <div class="navbar">
+          <img src="../../assets/img/django-logo.png" alt="djangourse-logo" />
+          <div class="middle-item">
+            <a href="#">Beranda</a>
+            <a href="#">Kursus</a>
+            <a href="#">Cara Penggunaan</a>
+          </div>
+          <a href="#">Sign-in</a>
+        </div>
+      </nav>
+      <div class="hero-section">
+        <h2>Dasbor</h2>
+        <h5>beranda - Dasbor</h5>
+      </div>
+      <div class="main-content">
+        <div class="side">
+          <div class="profile">
+            <img src="./assets/stock.jpg" alt="" />
+            <div class="profile-name">
+              <h2>Name</h2>
+              <h5>instruktur</h5>
+            </div>
+            <button class="add-course">Tambah Kursus</button>
+          </div>
+          <div class="navigation">
+            <ul>
+              <li class="section-title">Dashboard</li>
+              <li>
+                <a href="#"> <i class="icon-dashboard"></i> Dashboard </a>
+              </li>
+              <li>
+                <a href="#"> <i class="icon-profile"></i> Profil Saya </a>
+              </li>
+              <li class="section-title">Pengajar</li>
+              <li>
+                <a href="#"> <i class="icon-courses"></i> Kursus Saya </a>
+              </li>
+              <li>
+                <a href="#"> <i class="icon-withdraw"></i> Tarik Saldo </a>
+              </li>
+              <li>
+                <a href="#"> <i class="icon-quiz"></i> Percobaan Kuis </a>
+              </li>
+              <li>
+                <a href="#"> <i class="icon-tasks"></i> Tugas </a>
+              </li>
+              <li class="section-title">Pengaturan Akun</li>
+              <li>
+                <a href="#"> <i class="icon-edit-profile"></i> Edit Profil </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon-change-password"></i> Ubah Password
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon-withdraw-settings"></i> Penarikan
+                </a>
+              </li>
+              <li>
+                <a href="#"> <i class="icon-logout"></i> Keluar </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-content">
+          <div class="stats">
+            <div class="count-course">
+              <h3>Jumlah Kursus</h3>
+              <h3>0</h3>
+            </div>
+            <div class="count-student">
+              <h3>Jumlah Kursus</h3>
+              <h3>0</h3>
+            </div>
+            <div class="revenue">
+              <h3>Jumlah Kursus</h3>
+              <h3>0</h3>
+            </div>
+            <div class="count-approve">
+              <h3>Jumlah Kursus</h3>
+              <h3>0</h3>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-item">
+              <h1>Kursus yang Baru Dibuat</h1>
+              <table class="course-table">
+                <thead>
+                  <tr>
+                    <th>Kursus</th>
+                    <th>Terdafter</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="course-details">
+                        <img
+                          src="https://via.placeholder.com/50"
+                          alt="Thumbnail"
+                        />
+                        <span>Kursus HTML, CSS, Javascript Lengkap</span>
+                      </div>
+                    </td>
+                    <td>0</td>
+                    <td>Menunggu Persetujuan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="course-details">
+                        <img
+                          src="https://via.placeholder.com/50"
+                          alt="Thumbnail"
+                        />
+                        <span>Informasi tentang UI/UX</span>
+                      </div>
+                    </td>
+                    <td>1</td>
+                    <td>Disetujui</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="course-details">
+                        <img
+                          src="https://via.placeholder.com/50"
+                          alt="Thumbnail"/>
+                        <span>Kursus Lengkap Pengembangan Web Fullstack</span>
+                      </div>
+                    </td>
+                    <td>1</td>
+                    <td>Disetujui</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="grid">
+            <div class="footer-logo">
+                <img alt="Logo" src="../../../assets/img/django-3.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    consequat mauris.
+                </p>
+            </div>
+            <div>
+                <h3>Instruktur</h3>
+                <ul>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Instructor</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Siswa</h3>
+                <ul>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Jelajahi Kursus</a></li>
+                    <li><a href="#">Wishlist Kursus</a></li>
+                    <li><a href="#">Student</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Alamat</h3>
+                <p>Jalan Gelatik, Samarinda</p>
+                <p><a href="mailto:admin@django.com">admin@django.com</a></p>
+                <p>+48 731 819 948</p< /div>
+            </div>
+    </footer>
+  </body>
+</html>
