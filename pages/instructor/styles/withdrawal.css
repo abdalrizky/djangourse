@@ -1,0 +1,431 @@
+
+:root {
+    --body-small-font-family: "DM Sans", Helvetica;
+    --body-small-font-size: 16px;
+    --body-small-font-style: normal;
+    --body-small-font-weight: 400;
+    --body-small-letter-spacing: 0.5px;
+    --body-small-line-height: 24px;
+    --m3-label-medium-font-family: "Roboto", Helvetica;
+    --m3-label-medium-font-size: 12px;
+    --m3-label-medium-font-style: normal;
+    --m3-label-medium-font-weight: 500;
+    --m3-label-medium-letter-spacing: 0.5px;
+    --m3-label-medium-line-height: 16px;
+    --m3-title-medium-font-family: "Roboto", Helvetica;
+    --m3-title-medium-font-size: 16px;
+    --m3-title-medium-font-style: normal;
+    --m3-title-medium-font-weight: 500;
+    --m3-title-medium-letter-spacing: 0.15000000596046448px;
+    --m3-title-medium-line-height: 24px;
+    --neutral-10: rgba(72, 98, 132, 1);
+    --neutral-2: rgba(222, 229, 237, 1);
+    --background-color: #d9d9d9;
+    --sidebar: #ffffff;
+    --semibold-60-font-family: "Poppins", Helvetica;
+    --semibold-60-font-size: 60px;
+    --semibold-60-font-style: normal;
+    --semibold-60-font-weight: 600;
+    --semibold-60-letter-spacing: 0px;
+    --semibold-60-line-height: 30px;
+  }
+
+  body {
+    font-family: var(--m3-label-medium-font-family);
+    margin: 0;
+  }
+  
+  #main-structure {
+    flex: 1; /* Allow the main structure to grow and push the footer down */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    padding-bottom: 50px; /* Add padding equal to the footer height to prevent overlap */
+    box-sizing: border-box;
+    background-color: #D9D9D9;
+}
+
+  #navbar-section {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #245044;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 2rem;
+  }
+
+  .navbar img {
+    width: 10%;
+    height: 10%;
+  }
+
+  .navbar .middle-item {
+    display: flex;
+    gap: 7.12vh;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: large;
+  }
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.78rem 0 1.78rem 0;
+    /* bg pengajar */
+    background: radial-gradient(100% 83.72% at 0% 67.37%, #216C68 0%, #D9D9D9 0.73%, #8AB7B8 33.49%, #1E888C 78.25%, #59A2A4 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+}
+
+.hero-section h2 {
+    color: white;
+    font-family: var(--semibold-60-font-family);
+    font-size: x-large;
+}
+
+.hero-section h5 {
+    color: #245044;
+    font-size: large;
+}
+
+.main-content {
+    background-color: #D9D9D9;
+    display: flex;
+    padding: 0.87rem;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20%;
+}
+
+@keyframes darkShadeCycle {
+    0% {
+        background-color: #1E888C;
+    }
+    25% {
+        background-color: #1A7A7E;
+    }
+    50% {
+        background-color: #156D70;
+    }
+    75% {
+        background-color: #125E62;
+    }
+    100% {
+        background-color: #1E888C;
+    }
+}
+
+.profile {
+    animation: darkShadeCycle 3.5s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.62rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.profile img {
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    max-width: 225px;
+    max-height: 225px;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.names .profile-name {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    color: white;
+
+}
+
+.names .profile-title {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.profile .add-course {
+    /* Button style */
+    width: 70%;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #216C68;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    font-family: var(--m3-label-medium-font-family);
+}
+
+.profile .add-course:hover {
+    background-color: #1A534E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile .add-course:active {
+    transform: scale(0.95);
+    background-color: #143E3B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.navigation ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin-bottom: 10px; 
+}
+
+.navigation .section-title {
+    font-weight: bold;
+    color: #216C68; 
+    margin: 15px 0 10px 0; 
+    font-size: 14px;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.navigation a {
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Vertically center icon and text */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Default text color */
+    font-size: 16px; /* Text size */
+    padding: 8px 10px; /* Add padding for click area */
+    border-radius: 8px; /* Rounded edges for links */
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.navigation a:hover {
+    background-color: #216C68; 
+    color: #fff; 
+}
+
+.navigation a i {
+    margin-right: 10px; 
+    font-size: 18px; 
+    color: #216C68; 
+    transition: color 0.3s; 
+}
+
+.navigation a:hover i {
+    color: #fff; 
+}
+
+.navigation li:last-child a:hover {
+    background-color: #b52b27; 
+}
+
+
+.right-content {
+    margin: 0 0 0 20px;
+    width: 80%;
+}
+
+.header {
+    background-color: #143E3B;
+    padding: 3rem;
+    color: white;
+}
+
+
+.interlude {
+    height: 40px;
+    background-color: #156D70;
+}
+
+.wrapper {
+    background-color: white;
+    padding: 3rem;
+}
+
+.withdraw.withdrawal-options {
+    background-color: #C9C9C9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.method {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.method:hover {
+    background-color: #f8f9fa;
+}
+
+.method input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #216C68; /* Customize radio button color */
+    background-color: #C9C9C9;
+}
+
+.method span {
+    font-size: 16px;
+    color: #333;
+}
+
+.withdrawal-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.withdrawal-form p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+        background-color: #C9C9C9;
+}
+
+.submit-btn {
+    background-color: #216C68;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #1A534E;
+}
+
+  
+footer {
+    background-image: url('../../../assets/img/bg-footer.png');
+    color: white;
+    padding: 30px;
+  }
+  
+  footer .grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  footer li {
+    list-style: none;
+  }
+  
+  footer .footer-logo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer .footer-logo img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  footer .grid div {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  footer .grid h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  footer .grid a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer .grid a:hover {
+    text-decoration: underline;
+  }
+
+  footer .grid ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+footer .grid ul li {
+    margin-left: 0; 
+}
+
+
+footer .grid h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+footer .grid div {
+    text-align: left;
+}
+
+  
