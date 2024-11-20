@@ -130,11 +130,13 @@
 }
 
 .profile img {
-    width: 160px;
-    height: 144px;
     border-radius: 20px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    max-width: 225px;
+    max-height: 225px;
 }
 
 .names {

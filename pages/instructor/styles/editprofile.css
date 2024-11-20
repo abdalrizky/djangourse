@@ -136,13 +136,13 @@
 }
 
 .profile img {
-    border-radius: 20px;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: auto;
-    max-width: 225px;
-    max-height: 225px;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  max-width: 225px;
+  max-height: 225px;
 }
 
 .names {
