@@ -10,20 +10,25 @@
   </head>
   <body>
     <div id="main-structure">
-      <nav id="navbar-section">
+      <header>
         <div class="navbar">
-          <img src="../../assets/img/django-logo.png" alt="djangourse-logo" />
-          <div class="middle-item">
-            <a href="#">Beranda</a>
-            <a href="#">Kursus</a>
-            <a href="#">Cara Penggunaan</a>
-          </div>
-          <a href="#">Sign-in</a>
+            <img src="../../assets/img/logo-django.png" alt="Logo" class="logo" style="  width: 110px; ">
+            <nav>
+                <ul>
+                    <li><a href="index.php">Beranda</a></li>
+                    <li><a href="pages/student/course-list.php">Kursus</a></li>
+                    <li><a href="#">Cara Penggunaan</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="style-daftar" onclick="location.href='pages/auth.php'">Daftar</button>
+                <button class="style-masuk" onclick="location.href='pages/auth.php'">Masuk</button>
+            </div>
         </div>
-      </nav>
+    </header>
       <div class="hero-section">
-        <h2>Dasbor</h2>
-        <h5>beranda - Dasbor</h5>
+        <h2>Dashboard</h2>
+        <h5>beranda - Dashboardr</h5>
       </div>
       <div class="main-content">
         <div class="side">
@@ -44,33 +49,33 @@
               <li class="section-title">Dashboard</li>
               <li>
                 <!-- icon fontawesome -->
-                <a href="#"> <i class="fas fa-tachometer-alt"></i> Dashboard </a>
+                <a href="./dashboard.html"> <i class="fas fa-tachometer-alt"></i> Dashboard </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-user-circle"></i> Profil Saya </a>
+                <a href="./myprofile.html"> <i class="fas fa-user-circle"></i> Profil Saya </a>
               </li>
               <li class="section-title">Pengajar</li>
               <li>
-                <a href="#"> <i class="fas fa-book-open"></i> Kursus Saya </a>
+                <a href="./mycourse.html"> <i class="fas fa-book-open"></i> Kursus Saya </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-money-bill-wave"></i> Tarik Saldo </a>
+                <a href="./withdrawal.html"> <i class="fas fa-money-bill-wave"></i> Tarik Saldo </a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#"> <i class="fas fa-feather-alt"></i> Percobaan Kuis </a>
               </li>
               <li>
                 <a href="#"> <i class="fas fa-tasks"></i> Tugas </a>
-              </li>
+              </li> -->
               <li class="section-title">Pengaturan Akun</li>
               <li>
-                <a href="#"> <i class="fas fa-edit"></i> Edit Profil </a>
+                <a href="./editprofile.html"> <i class="fas fa-edit"></i> Edit Profil </a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-key"></i> Ubah Password</a>
+                <a href="./change-password.html"> <i class="fas fa-key"></i> Ubah Password</a>
               </li>
               <li>
-                <a href="#"> <i class="fas fa-wallet"></i> Penarikan </a>
+                <a href="./withdrawal-record.html"> <i class="fas fa-wallet"></i> Penarikan </a>
               </li>
               <li>
                 <a href="#"> <i class="fas fa-sign-out-alt"></i> Keluar </a>
