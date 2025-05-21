@@ -36,6 +36,9 @@ if (!isset($_SESSION['login']) || $_SESSION['user']['role_id'] !== 3) {
                     <li><a href="instructor-management.php">
                             <iconify-icon icon="mdi:teacher" class="sidebar-icon"></iconify-icon>Pengajar
                         </a></li>
+                    <li><a href="report.php">
+                            <iconify-icon icon="mage:chart-25" class="sidebar-icon"></iconify-icon>Laporan
+                        </a></li>
                     <li><a href="setting.php" class="sidebar-on">
                             <iconify-icon icon="uil:setting" class="sidebar-icon"></iconify-icon>Pengaturan
                         </a></li>
