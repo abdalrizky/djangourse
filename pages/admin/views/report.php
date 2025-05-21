@@ -78,7 +78,7 @@ foreach ($popular_courses as $row) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan - Djangourse</title>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/report.css">
 </head>
 <body>
     <div class="container">
@@ -112,27 +112,28 @@ foreach ($popular_courses as $row) {
                 <h1>Laporan</h1>
             </header>
 
-            <section class="chart-container">
-                <h3>Jumlah Kursus per Kategori</h3>
-                <canvas id="coursesPerCategory"></canvas>
+            <section class="charts">
+                <div class="chart-container">
+                    <h3>Siswa Mendaftar Kursus</h3>
+                    <canvas id="topStudents"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Kelas Terpopuler</h3>
+                    <canvas id="popularCourses"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Jumlah Kursus per Kategori</h3>
+                    <canvas id="coursesPerCategory"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Transaksi Beli Per Bulan</h3>
+                    <canvas id="monthlyRevenue"></canvas>
+                </div>
+
             </section>
-
-            <section class="chart-container">
-                <h3>Siswa Mendaftar Kursus</h3>
-                <canvas id="topStudents"></canvas>
-            </section>
-
-            <section class="chart-container">
-                <h3>Pendapatan Per Bulan</h3>
-                <canvas id="monthlyRevenue"></canvas>
-            </section>
-
-            <section class="chart-container">
-                <h3>Kelas Terpopuler</h3>
-                <canvas id="popularCourses"></canvas>
-            </section>
-
-
         </main>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
