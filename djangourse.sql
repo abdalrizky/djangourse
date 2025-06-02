@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2024 at 01:35 PM
+-- Generation Time: Jun 02, 2025 at 08:10 AM
 -- Server version: 8.0.35
 -- PHP Version: 8.3.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `djangourse`
 --
-CREATE DATABASE IF NOT EXISTS `djangourse` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci;
-USE `djangourse`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `djangourse`;
 -- Table structure for table `courses`
 --
 
-DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
   `id` int NOT NULL,
   `category_id` int NOT NULL,
@@ -50,7 +47,6 @@ CREATE TABLE `courses` (
 -- Table structure for table `course_categories`
 --
 
-DROP TABLE IF EXISTS `course_categories`;
 CREATE TABLE `course_categories` (
   `id` int NOT NULL,
   `name` varchar(50) NOT NULL
@@ -70,11 +66,11 @@ INSERT INTO `course_categories` (`id`, `name`) VALUES
 -- Table structure for table `course_finished_materials`
 --
 
-DROP TABLE IF EXISTS `course_finished_materials`;
 CREATE TABLE `course_finished_materials` (
   `id` int NOT NULL,
   `student_id` int NOT NULL,
-  `course_material_id` int NOT NULL
+  `course_material_id` int NOT NULL,
+  `finished_at` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -83,7 +79,6 @@ CREATE TABLE `course_finished_materials` (
 -- Table structure for table `course_materials`
 --
 
-DROP TABLE IF EXISTS `course_materials`;
 CREATE TABLE `course_materials` (
   `id` int NOT NULL,
   `course_id` int NOT NULL,
@@ -98,7 +93,6 @@ CREATE TABLE `course_materials` (
 -- Table structure for table `course_tools`
 --
 
-DROP TABLE IF EXISTS `course_tools`;
 CREATE TABLE `course_tools` (
   `id` int NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -128,7 +122,6 @@ INSERT INTO `course_tools` (`id`, `name`, `type`, `logo`) VALUES
 -- Table structure for table `course_tool_galleries`
 --
 
-DROP TABLE IF EXISTS `course_tool_galleries`;
 CREATE TABLE `course_tool_galleries` (
   `id` int NOT NULL,
   `course_id` int NOT NULL,
@@ -141,7 +134,6 @@ CREATE TABLE `course_tool_galleries` (
 -- Table structure for table `credentials`
 --
 
-DROP TABLE IF EXISTS `credentials`;
 CREATE TABLE `credentials` (
   `id` int NOT NULL,
   `role_id` int NOT NULL,
@@ -156,7 +148,6 @@ CREATE TABLE `credentials` (
 -- Table structure for table `enrolled_courses`
 --
 
-DROP TABLE IF EXISTS `enrolled_courses`;
 CREATE TABLE `enrolled_courses` (
   `id` int NOT NULL,
   `student_id` int NOT NULL,
@@ -170,7 +161,6 @@ CREATE TABLE `enrolled_courses` (
 -- Table structure for table `favourite_courses`
 --
 
-DROP TABLE IF EXISTS `favourite_courses`;
 CREATE TABLE `favourite_courses` (
   `id` int NOT NULL,
   `student_id` int NOT NULL,
@@ -183,7 +173,6 @@ CREATE TABLE `favourite_courses` (
 -- Table structure for table `instructors`
 --
 
-DROP TABLE IF EXISTS `instructors`;
 CREATE TABLE `instructors` (
   `id` int NOT NULL,
   `credential_id` int NOT NULL,
@@ -202,10 +191,10 @@ CREATE TABLE `instructors` (
 -- Table structure for table `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `id` int NOT NULL,
   `email` varchar(100) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `expired_at` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -215,7 +204,6 @@ CREATE TABLE `password_resets` (
 -- Table structure for table `roles`
 --
 
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` int NOT NULL,
   `name` varchar(100) NOT NULL
@@ -236,7 +224,6 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- Table structure for table `students`
 --
 
-DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `id` int NOT NULL,
   `credential_id` int NOT NULL,
@@ -253,7 +240,6 @@ CREATE TABLE `students` (
 -- Table structure for table `transactions`
 --
 
-DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `id` int NOT NULL,
   `student_id` int NOT NULL,
@@ -269,7 +255,6 @@ CREATE TABLE `transactions` (
 -- Table structure for table `withdrawal_requests`
 --
 
-DROP TABLE IF EXISTS `withdrawal_requests`;
 CREATE TABLE `withdrawal_requests` (
   `id` int NOT NULL,
   `instructor_id` int NOT NULL,
@@ -404,7 +389,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `course_categories`
 --
 ALTER TABLE `course_categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `course_finished_materials`
@@ -422,7 +407,7 @@ ALTER TABLE `course_materials`
 -- AUTO_INCREMENT for table `course_tools`
 --
 ALTER TABLE `course_tools`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `course_tool_galleries`
@@ -464,7 +449,7 @@ ALTER TABLE `password_resets`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `students`
