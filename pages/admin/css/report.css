@@ -217,3 +217,61 @@ canvas {
   padding: 15px;
   margin-top: 8px;
 }
+
+.sub-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.progress-section {
+    margin-top: 16px;
+}
+
+.progress-item {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.progress-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.progress-table .progress-table-student-name {
+    width: 30%;
+}
+
+.progress-table .progress-table-course-name {
+    width: 30%;
+}
+
+.progress-table .progress-table-progress-count {
+    width: 40%;
+}
+
+.progress-table .progress-table-progress-count .progress-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.progress-table tr td {
+    padding: 8px;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.progress-bar .progress {
+    display: flex;
+    background-color: #1abc9c;
+    border: 1px solid #1abc9c;
+    border-radius: 8px;
+    height: 10px;
+}

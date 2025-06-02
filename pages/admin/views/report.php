@@ -37,7 +37,27 @@ $popular_courses = fetch(
     JOIN enrolled_courses ec ON ec.course_id = c.id
     GROUP BY c.id
     ORDER BY enrolled DESC
-    LIMIT 5;"
+    LIMIT 5"
+);
+
+$student_course_progress = fetch(
+    "SELECT
+        s.name AS student_name,
+        c.name AS course_name,
+        c.id AS course_id,
+        s.id AS student_id,
+        (SELECT COUNT(DISTINCT cm.id) 
+            FROM course_materials cm 
+            WHERE cm.course_id = c.id) AS total_materials,
+        (SELECT COUNT(DISTINCT cfm.id)
+            FROM course_finished_materials cfm
+            JOIN course_materials cm_finished ON cfm.course_material_id = cm_finished.id
+            WHERE cfm.student_id = s.id AND cm_finished.course_id = c.id
+        ) AS finished_materials
+    FROM students s
+    JOIN enrolled_courses ec ON s.id = ec.student_id
+    JOIN courses c ON ec.course_id = c.id
+    ORDER BY s.name, c.name"
 );
 
 $labels_course_by_categories = [];
@@ -127,12 +147,68 @@ foreach ($popular_courses as $row) {
                     <h3>Jumlah Kursus per Kategori</h3>
                     <canvas id="coursesPerCategory"></canvas>
                 </div>
-                
+
                 <div class="chart-container">
                     <h3>Transaksi Beli Per Bulan</h3>
                     <canvas id="monthlyRevenue"></canvas>
                 </div>
+            </section>
 
+            <?php
+                $groupedData = [];
+                foreach ($student_course_progress as $row) {
+                    $groupedData[$row['student_name']][] = $row;
+                }
+            ?>
+
+            <section class="progress-section">
+            <h2>Kemajuan Belajar</h2>
+            <p class="sub-text">*Menampilkan seluruh kursus yang dikerjakan oleh siswa.</p>
+            <div class="progress-container">
+            <?php foreach ($groupedData as $studentName => $courses): ?>
+                <div class="progress-item">
+                    <table class="progress-table">
+                        <tbody>
+                            <?php
+                            $isFirstCourseForStudent = true;
+                            foreach ($courses as $courseData):
+                                $courseNameDisplay = htmlspecialchars($courseData['course_name']);
+                                $totalMaterials = (int)$courseData['total_materials'];
+                                $finishedMaterials = (int)$courseData['finished_materials'];
+
+                                $progressPercentage = 0;
+                                if ($totalMaterials > 0):
+                                    $progressPercentage = round(($finishedMaterials / $totalMaterials) * 100);
+                                endif;
+                            ?>
+                                <tr>
+                                    <?php if ($isFirstCourseForStudent): ?>
+                                        <td class="progress-table-student-name"><?php echo htmlspecialchars($studentName); ?></td>
+                                        <?php $isFirstCourseForStudent = false; ?>
+                                    <?php else: ?>
+                                        <td></td> <?php endif; ?>
+                                    
+                                    <td class="progress-table-course-name">
+                                        <?php echo $courseNameDisplay; ?>
+                                    </td>
+                                    <td class="progress-table-progress-count">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: <?php echo $progressPercentage; ?>%;"></div>
+                                            <span class="progress-text"><?php echo $progressPercentage; ?>%</span>
+                                        </div>
+                                        <?php if ($finishedMaterials == $totalMaterials): ?>
+                                        <p class="progress-subtitle">Semua materi telah diselesaikan</p>
+                                        <?php else: ?>
+                                        <p class="progress-subtitle"><?php echo $finishedMaterials; ?> dari <?php echo $totalMaterials; ?> materi diselesaikan</p>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endforeach; ?>
+            </div>
             </section>
         </main>
     </div>
