@@ -70,8 +70,8 @@ $labels_popular_courses = [];
 $totals_popular_courses = [];
 
 foreach ($course_by_categories as $row) {
-    $labels[] = $row['category_name'];
-    $totals[] = (int)$row['total_courses'];
+    $labels_course_by_categories[] = $row['category_name'];
+    $totals_course_by_categories[] = (int)$row['total_courses'];
 }
 
 foreach ($student_registered as $row) {
@@ -223,7 +223,15 @@ foreach ($popular_courses as $row) {
             datasets: [{
                 label: 'Jumlah Kursus',
                 data: <?= json_encode($totals_course_by_categories) ?>,
-                backgroundColor: 'rgba(75, 192, 192, 0.7)'
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+                ]
             }]
         },
         options: {
